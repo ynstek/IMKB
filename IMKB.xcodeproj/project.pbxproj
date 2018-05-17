@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		999576EBD1989C39F006A46B /* Pods_IMKB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 53D0922FCA31C97FDDD6F9A8 /* Pods_IMKB.framework */; };
 		F207E12420AD9FE700F27C66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F207E12320AD9FE700F27C66 /* AppDelegate.swift */; };
-		F207E12620AD9FE700F27C66 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F207E12520AD9FE700F27C66 /* ViewController.swift */; };
 		F207E12920AD9FE700F27C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F207E12720AD9FE700F27C66 /* Main.storyboard */; };
 		F207E12B20AD9FE800F27C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F207E12A20AD9FE800F27C66 /* Assets.xcassets */; };
 		F207E12E20AD9FE800F27C66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F207E12C20AD9FE800F27C66 /* LaunchScreen.storyboard */; };
 		F207E13920AD9FE800F27C66 /* IMKBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F207E13820AD9FE800F27C66 /* IMKBTests.swift */; };
 		F207E14420AD9FE800F27C66 /* IMKBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F207E14320AD9FE800F27C66 /* IMKBUITests.swift */; };
+		F2C087E320ADA5D100681334 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C087E220ADA5D100681334 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,9 +35,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03AF3C7DEE41C619527F7B8B /* Pods-IMKB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMKB.release.xcconfig"; path = "Pods/Target Support Files/Pods-IMKB/Pods-IMKB.release.xcconfig"; sourceTree = "<group>"; };
+		3CA03737D353BF0136727B37 /* Pods-IMKB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IMKB.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IMKB/Pods-IMKB.debug.xcconfig"; sourceTree = "<group>"; };
+		53D0922FCA31C97FDDD6F9A8 /* Pods_IMKB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IMKB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F207E12020AD9FE700F27C66 /* IMKB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMKB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F207E12320AD9FE700F27C66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F207E12520AD9FE700F27C66 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		F207E12820AD9FE700F27C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		F207E12A20AD9FE800F27C66 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F207E12D20AD9FE800F27C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -47,6 +50,7 @@
 		F207E13F20AD9FE800F27C66 /* IMKBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMKBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F207E14320AD9FE800F27C66 /* IMKBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMKBUITests.swift; sourceTree = "<group>"; };
 		F207E14520AD9FE800F27C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F2C087E220ADA5D100681334 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +58,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				999576EBD1989C39F006A46B /* Pods_IMKB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,6 +79,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		27DDC4DE6738E88E27E7C604 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3CA03737D353BF0136727B37 /* Pods-IMKB.debug.xcconfig */,
+				03AF3C7DEE41C619527F7B8B /* Pods-IMKB.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ED155633F0B4713EE22CC24F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				53D0922FCA31C97FDDD6F9A8 /* Pods_IMKB.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		F207E11720AD9FE700F27C66 = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +103,8 @@
 				F207E13720AD9FE800F27C66 /* IMKBTests */,
 				F207E14220AD9FE800F27C66 /* IMKBUITests */,
 				F207E12120AD9FE700F27C66 /* Products */,
+				27DDC4DE6738E88E27E7C604 /* Pods */,
+				ED155633F0B4713EE22CC24F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -98,11 +122,13 @@
 			isa = PBXGroup;
 			children = (
 				F207E12320AD9FE700F27C66 /* AppDelegate.swift */,
-				F207E12520AD9FE700F27C66 /* ViewController.swift */,
 				F207E12720AD9FE700F27C66 /* Main.storyboard */,
 				F207E12A20AD9FE800F27C66 /* Assets.xcassets */,
 				F207E12C20AD9FE800F27C66 /* LaunchScreen.storyboard */,
 				F207E12F20AD9FE800F27C66 /* Info.plist */,
+				F2C087E020ADA08E00681334 /* View */,
+				F2C087E120ADA09A00681334 /* ViewController */,
+				F2C087DF20ADA08900681334 /* Model */,
 			);
 			path = IMKB;
 			sourceTree = "<group>";
@@ -125,6 +151,28 @@
 			path = IMKBUITests;
 			sourceTree = "<group>";
 		};
+		F2C087DF20ADA08900681334 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F2C087E020ADA08E00681334 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F2C087E220ADA5D100681334 /* HomeVC.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F2C087E120ADA09A00681334 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -132,9 +180,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = F207E14820AD9FE800F27C66 /* Build configuration list for PBXNativeTarget "IMKB" */;
 			buildPhases = (
+				619FC6A448B036F0FD05EFB9 /* [CP] Check Pods Manifest.lock */,
 				F207E11C20AD9FE700F27C66 /* Sources */,
 				F207E11D20AD9FE700F27C66 /* Frameworks */,
 				F207E11E20AD9FE700F27C66 /* Resources */,
+				94CAEF97300BA56BF44A6BE2 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -251,13 +301,58 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		619FC6A448B036F0FD05EFB9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-IMKB-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		94CAEF97300BA56BF44A6BE2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-IMKB/Pods-IMKB-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/AEXML/AEXML.framework",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
+				"${BUILT_PRODUCTS_DIR}/StringExtensionHTML/StringExtensionHTML.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEXML.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StringExtensionHTML.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IMKB/Pods-IMKB-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		F207E11C20AD9FE700F27C66 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F207E12620AD9FE700F27C66 /* ViewController.swift in Sources */,
 				F207E12420AD9FE700F27C66 /* AppDelegate.swift in Sources */,
+				F2C087E320ADA5D100681334 /* HomeVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -428,10 +523,12 @@
 		};
 		F207E14920AD9FE800F27C66 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3CA03737D353BF0136727B37 /* Pods-IMKB.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R7N4XN9BQ5;
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = IMKB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -446,10 +543,12 @@
 		};
 		F207E14A20AD9FE800F27C66 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03AF3C7DEE41C619527F7B8B /* Pods-IMKB.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R7N4XN9BQ5;
+				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = IMKB/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

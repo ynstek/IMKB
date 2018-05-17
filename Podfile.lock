@@ -1,0 +1,28 @@
+PODS:
+  - AEXML (4.2.2)
+  - Alamofire (4.7.0)
+  - StringExtensionHTML (0.2.0)
+  - SWXMLHash (4.0.0)
+
+DEPENDENCIES:
+  - AEXML
+  - Alamofire (~> 4.7)
+  - StringExtensionHTML
+  - SWXMLHash (~> 4.0.0)
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - AEXML
+    - Alamofire
+    - StringExtensionHTML
+    - SWXMLHash
+
+SPEC CHECKSUMS:
+  AEXML: 5ebafc1b75e0bcf0f1b09b8ca8fed2d5a199479b
+  Alamofire: 907e0a98eb68cdb7f9d1f541a563d6ac5dc77b25
+  StringExtensionHTML: 80fdb1b3a83669e371d27bfe2f208f067e2db328
+  SWXMLHash: 6bbc0bf72975a18ceda469fb7d6a886a26d81694
+
+PODFILE CHECKSUM: 0a5fc0d74c992d2a3fc9d9ff434019964c877566
+
+COCOAPODS: 1.5.0
