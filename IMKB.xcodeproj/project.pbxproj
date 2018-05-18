@@ -127,7 +127,6 @@
 				F207E12C20AD9FE800F27C66 /* LaunchScreen.storyboard */,
 				F207E12F20AD9FE800F27C66 /* Info.plist */,
 				F2C087E020ADA08E00681334 /* View */,
-				F2C087E120ADA09A00681334 /* ViewController */,
 				F2C087DF20ADA08900681334 /* Model */,
 			);
 			path = IMKB;
@@ -161,16 +160,17 @@
 		F2C087E020ADA08E00681334 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F2C087E220ADA5D100681334 /* HomeVC.swift */,
+				F2CC77C520AED3AC00E6A01D /* VC */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		F2C087E120ADA09A00681334 /* ViewController */ = {
+		F2CC77C520AED3AC00E6A01D /* VC */ = {
 			isa = PBXGroup;
 			children = (
+				F2C087E220ADA5D100681334 /* HomeVC.swift */,
 			);
-			path = ViewController;
+			path = VC;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
