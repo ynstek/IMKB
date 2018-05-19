@@ -17,7 +17,11 @@ extension StockandIndexVC: UITableViewDataSource {
         
         cell.Symbol.text = data.Symbol
         cell.Price.text = String(data.Price!) + " TL"
-        cell.Difference.text = "%" + String(data.Difference!)
+        
+        let difference = data.Difference!
+        cell.Difference.text = "%" + String(difference)
+        cell.DifferenceImage.image = difference > 0 ? UIImage(named: "up") : UIImage(named: "down")
+        
         cell.Volume.text = String(data.Volume!)
         cell.Buying.text = String(data.Buying!)
         cell.Selling.text = String(data.Selling!)

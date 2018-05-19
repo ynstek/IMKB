@@ -18,6 +18,7 @@ class StockandIndexTVCell: UITableViewCell {
     @IBOutlet var Selling: UILabel!
     @IBOutlet var Hour: UILabel!
     
+    @IBOutlet var DifferenceImage: UIImageView!
     
     
 }

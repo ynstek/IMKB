@@ -26,7 +26,7 @@ class ImkbHisseIndexList: NSObject {
 
     lazy var selectedStockandIndex: StockandIndexes? = nil
     
-    class func getList(completion: @escaping (_ response: [StockandIndexes]) -> Void) {
+    class func getList(completion: @escaping (_ response: ForexResponse) -> Void) {
         Encrypt.getRequestIsValid { (requestKey) in
             let soapRequest = AEXMLDocument()
             let envelopeAttributes = ["xmlns:soapenv" : Service.Url.envelope.rawValue
@@ -61,12 +61,12 @@ class ImkbHisseIndexList: NSObject {
                     let result = xml["soap:Envelope"]["soap:Body"]["GetForexStocksandIndexesInfoResponse"]["GetForexStocksandIndexesInfoResult"]
                     
                     if result["RequestResult"]["Success"].element!.text == "true" {
-                        let responseList = result["StocknIndexesResponseList"]
+                        var forexResponse = ForexResponse()
                         
-                        var stocknIndexesResponseList = [StockandIndexes]()
+                        var responseList = result["StocknIndexesResponseList"]
                         for element in responseList["StockandIndex"].all {
-                            let stocknIndexesResponse = StockandIndexes(
-                                Symbol         : element["Symbol"].element!.text
+                            let response = StockandIndexes(
+                                  Symbol         : element["Symbol"].element!.text
                                 , Price          : Double(element["Price"].element!.text)
                                 , Difference     : Double(element["Difference"].element!.text)
                                 , Volume         : Double(element["Volume"].element!.text)
@@ -78,11 +78,46 @@ class ImkbHisseIndexList: NSObject {
                                 , Total          : Int(element["Total"].element!.text)
                                 , IsIndex        : Bool(element["IsIndex"].element!.text)!
                             )
-                            
-                            stocknIndexesResponseList.append(stocknIndexesResponse)
+                            forexResponse.StockandIndexes.append(response)
                         }
                         
-                        completion(stocknIndexesResponseList)
+                        responseList = result["IMKB100List"]
+                        for element in responseList["IMKB100"].all {
+                            let response = ImkbVolume(
+                                Symbol: element["Symbol"].element!.text
+                                , Name: element["Name"].element!.text
+                                , Gain: Double(element["Gain"].element!.text)
+                                , Fund: Double(element["Fund"].element!.text)
+                            )
+                            
+                            forexResponse.Imkb100.append(response)
+                        }
+                        
+                        responseList = result["IMKB50List"]
+                        for element in responseList["IMKB50"].all {
+                            let response = ImkbVolume(
+                                Symbol: element["Symbol"].element!.text
+                                , Name: element["Name"].element!.text
+                                , Gain: Double(element["Gain"].element!.text)
+                                , Fund: Double(element["Fund"].element!.text)
+                            )
+                            
+                            forexResponse.Imkb50.append(response)
+                        }
+                        
+                        responseList = result["IMKB30List"]
+                        for element in responseList["IMKB30"].all {
+                            let response = ImkbVolume(
+                                Symbol: element["Symbol"].element!.text
+                                , Name: element["Name"].element!.text
+                                , Gain: Double(element["Gain"].element!.text)
+                                , Fund: Double(element["Fund"].element!.text)
+                            )
+                            
+                            forexResponse.Imkb30.append(response)
+                        }
+
+                        completion(forexResponse)
                     } else {
                         AlertFunctions.messageType.showOKAlert("HATA!", bodyMessage: "Bir hata oluştu. Lütfen tekrar deneyiniz.")
                     }

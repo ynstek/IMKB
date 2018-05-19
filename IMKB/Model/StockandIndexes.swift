@@ -8,6 +8,12 @@
 
 import Foundation
 
+enum ImkbType {
+    case all
+    case high
+    case low
+}
+
 struct StockandIndexes {
     var Symbol: String?
     var Price: Double?
