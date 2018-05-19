@@ -23,7 +23,8 @@ class ImkbHisseIndexList: NSObject {
     lazy var stockandIndexesList: [StockandIndexes] = {
         return [StockandIndexes]()
     }()
-    
+
+    lazy var selectedStockandIndex: StockandIndexes? = nil
     
     class func getList(completion: @escaping (_ response: [StockandIndexes]) -> Void) {
         Encrypt.getRequestIsValid { (requestKey) in

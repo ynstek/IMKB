@@ -21,12 +21,12 @@ extension String {
     /// the location and length offsets for each replacement. This allows
     /// for the correct adjustment of any attributes that may be associated with
     /// with substrings within the `String`
-    func decodeHTMLEntities() -> (decodedString: String, replacementOffsets: [(index: String.Index, offset: Int)]) {
+    func decodeHTMLEntities() -> (decodedString: String, replacementOffsets: [(index: String.Index, offset: String.IndexDistance)]) {
         // ===== Utility functions =====
         // Record the index offsets of each replacement
         // This allows anyone to correctly adjust any attributes that may be
         // associated with substrings within the string
-        var replacementOffsets: [(index: String.Index, offset: Int)] = []
+        var replacementOffsets: [(index: String.Index, offset: String.IndexDistance)] = []
         // Convert the number in the string to the corresponding
         // Unicode character, e.g.
         //    decodeNumeric("64", 10)   --> "@"
@@ -46,23 +46,13 @@ extension String {
         //     decode("&foo;")    --> nil
         func decode(entity : String) -> Character? {
             if entity.hasPrefix("&#x") || entity.hasPrefix("&#X"){
+                print(entity[entity.index(entity.startIndex, offsetBy: 3) ..< entity.index(entity.endIndex, offsetBy: -1)])
                 
-                print(entity[entity.index(entity.startIndex, offsetBy: 3) ..< entity.index(entity.startIndex, offsetBy: -1)])
-                
-                let startIndex = entity.index(entity.startIndex, offsetBy: 3)
-                let endIndex = entity.index(entity.startIndex, offsetBy: -1)
-                
-                return decodeNumeric(string: String(entity[startIndex ..< endIndex]), base: 16)
-                //                return decodeNumeric(string: entity.substring(with: (entity.index(entity.startIndex, offsetBy: 3) ..< entity.index(entity.endIndex, offsetBy: -1))), base:16)
+                return decodeNumeric(string: String(entity[entity.index(entity.startIndex, offsetBy: 3) ..< entity.index(entity.endIndex, offsetBy: -1)]), base:16)
                 
             } else if entity.hasPrefix("&#") {
-                let startIndex = entity.index(entity.startIndex, offsetBy: 2)
-                let endIndex = entity.index(entity.startIndex, offsetBy: -1)
-                
-                return decodeNumeric(string: String(entity[startIndex ..< endIndex]), base: 10)
-                
-                //                return decodeNumeric(string: entity.substring(with: (entity.index(entity.startIndex, offsetBy: 2) ..< entity.index(entity.endIndex, offsetBy: -1))), base:10)
-                
+                return decodeNumeric(string: String(entity[entity.index(entity.startIndex, offsetBy: 2) ..< entity.index(entity.endIndex, offsetBy: -1)]), base:10)
+
             } else {
                 return characterEntities[entity]
             }
@@ -76,7 +66,7 @@ extension String {
             position = ampRange.lowerBound
             // Find the next ';' and copy everything from '&' to ';' into `entity`
             if let semiRange = self.range(of: ";", range: position ..< endIndex) {
-                let entity = String(self[position ..< semiRange.upperBound])
+                let entity = self[position ..< semiRange.upperBound]
                 if let decoded = decode(entity: String(entity)) {
                     // Replace by decoded character:
                     result.append(decoded)
@@ -85,7 +75,7 @@ extension String {
                     replacementOffsets.append(offset)
                 } else {
                     // Invalid entity, copy verbatim:
-                    result.append(entity)
+                    result.append(contentsOf: entity)
                 }
                 position = semiRange.upperBound
             } else {

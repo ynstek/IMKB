@@ -43,7 +43,7 @@ extension StockandIndexVC: UITableViewDataSource {
 extension StockandIndexVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+        ImkbHisseIndexList.shared.selectedStockandIndex = ImkbHisseIndexList.shared.stockandIndexesList[indexPath.row]
     }
     
 }

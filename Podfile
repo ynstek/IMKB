@@ -10,7 +10,7 @@ pod 'Alamofire', '~> 4.7'
 pod 'SWXMLHash', '~> 4.0.0'
 pod 'AEXML'
 pod 'StringExtensionHTML'
-
+pod 'Charts'
 end
 
 post_install do |installer|

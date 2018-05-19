@@ -26,6 +26,7 @@
 		F28F190D20B0314E00017229 /* StockandIndexVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F190C20B0314E00017229 /* StockandIndexVC.swift */; };
 		F28F191020B037E400017229 /* StockandIndexVC+TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F190F20B037E400017229 /* StockandIndexVC+TableView.swift */; };
 		F28F191220B041C400017229 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F191120B041C400017229 /* UIColor.swift */; };
+		F28F191420B04C2700017229 /* StockandIndexDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F191320B04C2700017229 /* StockandIndexDetailVC.swift */; };
 		F2C087E320ADA5D100681334 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C087E220ADA5D100681334 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -74,6 +75,7 @@
 		F28F190C20B0314E00017229 /* StockandIndexVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockandIndexVC.swift; sourceTree = "<group>"; };
 		F28F190F20B037E400017229 /* StockandIndexVC+TableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StockandIndexVC+TableView.swift"; sourceTree = "<group>"; };
 		F28F191120B041C400017229 /* UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		F28F191320B04C2700017229 /* StockandIndexDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockandIndexDetailVC.swift; sourceTree = "<group>"; };
 		F2C087E220ADA5D100681334 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -245,6 +247,7 @@
 				F2C087E220ADA5D100681334 /* HomeVC.swift */,
 				F28F190520B01F8000017229 /* IMKBHisseSenetleriEndekslerVC.swift */,
 				F28F190E20B037C400017229 /* StockandIndexVC */,
+				F28F191320B04C2700017229 /* StockandIndexDetailVC.swift */,
 			);
 			path = VC;
 			sourceTree = "<group>";
@@ -405,6 +408,7 @@
 				"${SRCROOT}/Pods/Target Support Files/Pods-IMKB/Pods-IMKB-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/AEXML/AEXML.framework",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Charts/Charts.framework",
 				"${BUILT_PRODUCTS_DIR}/SWXMLHash/SWXMLHash.framework",
 				"${BUILT_PRODUCTS_DIR}/StringExtensionHTML/StringExtensionHTML.framework",
 			);
@@ -412,6 +416,7 @@
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AEXML.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Charts.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SWXMLHash.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/StringExtensionHTML.framework",
 			);
@@ -430,6 +435,7 @@
 				F28F190420AF93B800017229 /* AlertFunctions.swift in Sources */,
 				F28F191220B041C400017229 /* UIColor.swift in Sources */,
 				F207E12420AD9FE700F27C66 /* AppDelegate.swift in Sources */,
+				F28F191420B04C2700017229 /* StockandIndexDetailVC.swift in Sources */,
 				F28F190620B01F8000017229 /* IMKBHisseSenetleriEndekslerVC.swift in Sources */,
 				F28F190120AF834500017229 /* StockandIndexes.swift in Sources */,
 				F28F191020B037E400017229 /* StockandIndexVC+TableView.swift in Sources */,
@@ -618,10 +624,7 @@
 				DEVELOPMENT_TEAM = R7N4XN9BQ5;
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = IMKB/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunustek.IMKB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -638,10 +641,7 @@
 				DEVELOPMENT_TEAM = R7N4XN9BQ5;
 				FRAMEWORK_SEARCH_PATHS = "";
 				INFOPLIST_FILE = IMKB/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunustek.IMKB;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -657,11 +657,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R7N4XN9BQ5;
 				INFOPLIST_FILE = IMKBTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunustek.IMKBTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -678,11 +674,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R7N4XN9BQ5;
 				INFOPLIST_FILE = IMKBTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunustek.IMKBTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -698,11 +690,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R7N4XN9BQ5;
 				INFOPLIST_FILE = IMKBUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunustek.IMKBUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -718,11 +706,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = R7N4XN9BQ5;
 				INFOPLIST_FILE = IMKBUITests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.yunustek.IMKBUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
