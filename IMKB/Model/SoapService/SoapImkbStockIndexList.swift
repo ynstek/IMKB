@@ -1,5 +1,5 @@
 //
-//  ImkbHisseIndexList.swift
+//  SoapImkbStockIndexList.swift
 //  IMKB
 //
 //  Created by Yunus Tek on 18.05.2018.
@@ -12,48 +12,28 @@ import SWXMLHash
 import StringExtensionHTML
 import AEXML
 
-private let _sharedImkbHisseIndexList = ImkbHisseIndexList()
-
-class ImkbHisseIndexList: NSObject {
+private let _sharedSoapImkbStockIndexList = SoapImkbStockIndexList()
+class SoapImkbStockIndexList: NSObject {
     
-    class var shared : ImkbHisseIndexList {
-        return _sharedImkbHisseIndexList
+    class var shared : SoapImkbStockIndexList {
+        return _sharedSoapImkbStockIndexList
     }
     
-    lazy var stockandIndexesList: [StockandIndexes] = {
+    lazy var list: [StockandIndexes] = {
         return [StockandIndexes]()
     }()
 
-    lazy var selectedStockandIndex: StockandIndexes? = nil
+    lazy var selected: StockandIndexes? = nil
     
-    class func getList(completion: @escaping (_ response: ForexResponse) -> Void) {
-        Encrypt.getRequestIsValid { (requestKey) in
+    class func getList(period: Service.Period, completion: @escaping (_ response: ForexResponse) -> Void) {
+        SoapEncrypt.getRequestIsValid { (requestKey) in
             let soapRequest = AEXMLDocument()
-            let envelopeAttributes = ["xmlns:soapenv" : Service.Url.envelope.rawValue
-                , "xmlns:tem"     : Service.Url.tempuri.rawValue
-            ]
-            
-            let envelope = soapRequest.addChild(name: "soapenv:Envelope", attributes: envelopeAttributes)
-            let body = envelope.addChild(name: "soapenv:Body")
-            let GetForexStocksandIndexesInfo = body.addChild(name: "tem:GetForexStocksandIndexesInfo")
-            let request = GetForexStocksandIndexesInfo.addChild(name: "tem:request")
-            request.addChild(name: "tem:IsIPAD").value = "true"
-            request.addChild(name: "tem:DeviceID").value = "test"
-            request.addChild(name: "tem:DeviceType").value = "ipad"
-            request.addChild(name: "tem:RequestKey").value = requestKey
-            request.addChild(name: "tem:Period").value = "Day"
-            
-            let soapLenth = String(soapRequest.xml.count)
+            Service.addChilds(soapRequest, requestKey: requestKey, period: period)
+
             let theURL = URL(string: Service.Url.service.rawValue)
-            
-            var urlRequest = URLRequest(url: theURL!)
-            urlRequest.addValue("mobileexam.veripark.com", forHTTPHeaderField: "Host")
-            urlRequest.addValue("text/xml; charset=utf-8", forHTTPHeaderField: "Content-Type")
-            urlRequest.addValue(soapLenth, forHTTPHeaderField: "Content-Length")
-            urlRequest.addValue("http://tempuri.org/GetForexStocksandIndexesInfo", forHTTPHeaderField: "SOAPAction")
-            urlRequest.httpMethod = "POST"
-            urlRequest.httpBody = soapRequest.xml.data(using: String.Encoding.utf8)
-            
+            let action = "GetForexStocksandIndexesInfo"
+            let urlRequest = Service.addValues(soapRequest, theURL: theURL!, SOAPaction: Service.Url.tempuri.rawValue + action)
+
             Alamofire.request(urlRequest).responseString { response in
                 
                 if let xmlString = response.result.value {
@@ -63,6 +43,7 @@ class ImkbHisseIndexList: NSObject {
                     if result["RequestResult"]["Success"].element!.text == "true" {
                         var forexResponse = ForexResponse()
                         
+                        // MARK: StocknIndexesResponseList
                         var responseList = result["StocknIndexesResponseList"]
                         for element in responseList["StockandIndex"].all {
                             let response = StockandIndexes(
@@ -78,9 +59,13 @@ class ImkbHisseIndexList: NSObject {
                                 , Total          : Int(element["Total"].element!.text)
                                 , IsIndex        : Bool(element["IsIndex"].element!.text)!
                             )
-                            forexResponse.StockandIndexes.append(response)
+                            forexResponse.stockandIndexes.append(response)
+                        }
+                        forexResponse.stockandIndexes.sort { (a, b) -> Bool in
+                            return a.Symbol! < b.Symbol!
                         }
                         
+                        // MARK: IMKB100List
                         responseList = result["IMKB100List"]
                         for element in responseList["IMKB100"].all {
                             let response = ImkbVolume(
@@ -90,9 +75,13 @@ class ImkbHisseIndexList: NSObject {
                                 , Fund: Double(element["Fund"].element!.text)
                             )
                             
-                            forexResponse.Imkb100.append(response)
+                            forexResponse.imkb100.append(response)
+                        }
+                        forexResponse.imkb100.sort { (a, b) -> Bool in
+                            return a.Symbol! < b.Symbol!
                         }
                         
+                        // MARK: IMKB50List
                         responseList = result["IMKB50List"]
                         for element in responseList["IMKB50"].all {
                             let response = ImkbVolume(
@@ -102,9 +91,13 @@ class ImkbHisseIndexList: NSObject {
                                 , Fund: Double(element["Fund"].element!.text)
                             )
                             
-                            forexResponse.Imkb50.append(response)
+                            forexResponse.imkb50.append(response)
+                        }
+                        forexResponse.imkb50.sort { (a, b) -> Bool in
+                            return a.Symbol! < b.Symbol!
                         }
                         
+                        // MARK: IMKB30List
                         responseList = result["IMKB30List"]
                         for element in responseList["IMKB30"].all {
                             let response = ImkbVolume(
@@ -114,7 +107,10 @@ class ImkbHisseIndexList: NSObject {
                                 , Fund: Double(element["Fund"].element!.text)
                             )
                             
-                            forexResponse.Imkb30.append(response)
+                            forexResponse.imkb30.append(response)
+                        }
+                        forexResponse.imkb30.sort { (a, b) -> Bool in
+                            return a.Symbol! < b.Symbol!
                         }
 
                         completion(forexResponse)

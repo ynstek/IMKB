@@ -14,7 +14,6 @@ class IMKBHisseSenetleriEndekslerVC: UIViewController {
         super.viewDidLoad()
 
     }
-
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -25,18 +24,21 @@ class IMKBHisseSenetleriEndekslerVC: UIViewController {
         let backItem = UIBarButtonItem()
         backItem.title = ""
         navigationItem.backBarButtonItem = backItem
-        
+        let view = segue.destination as! StockandIndexVC
+
         if segue.identifier == "high" {
-            let view = segue.destination as! StockandIndexVC
             view.imkbType = .high
         } else if segue.identifier == "low" {
-            let view = segue.destination as! StockandIndexVC
             view.imkbType = .low
         } else if segue.identifier == "all"  {
-            let view = segue.destination as! StockandIndexVC
             view.imkbType = .all
+        } else if segue.identifier == "imkb30" {
+            view.imkbType = .imkb30
+        } else if segue.identifier == "imkb50" {
+            view.imkbType = .imkb50
+        } else if segue.identifier == "imkb100" {
+            view.imkbType = .imkb100
         }
-        
     }
     
     

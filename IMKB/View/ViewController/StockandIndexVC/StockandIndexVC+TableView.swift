@@ -13,9 +13,10 @@ extension StockandIndexVC: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! StockandIndexTVCell
-        let data = ImkbHisseIndexList.shared.stockandIndexesList[indexPath.row]
         
-        cell.Symbol.text = data.Symbol
+        let data = isFilter ? filteredStockandIndexesList[indexPath.row] : SoapImkbStockIndexList.shared.list[indexPath.row]
+        
+        cell.Symbol.text = data.Symbol! + "\n" + String(data.Selling!)
         cell.Price.text = String(data.Price!) + " TL"
         
         let difference = data.Difference!
@@ -39,7 +40,8 @@ extension StockandIndexVC: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ImkbHisseIndexList.shared.stockandIndexesList.count
+        let count = isFilter ? filteredStockandIndexesList.count : SoapImkbStockIndexList.shared.list.count
+        return count
     }    
 }
 
@@ -47,7 +49,9 @@ extension StockandIndexVC: UITableViewDataSource {
 extension StockandIndexVC: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        ImkbHisseIndexList.shared.selectedStockandIndex = ImkbHisseIndexList.shared.stockandIndexesList[indexPath.row]
+        let selectedData = isFilter ? filteredStockandIndexesList[indexPath.row] : SoapImkbStockIndexList.shared.list[indexPath.row]
+
+        SoapImkbStockIndexList.shared.selected = selectedData
     }
     
 }

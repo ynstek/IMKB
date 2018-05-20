@@ -24,15 +24,15 @@ class StockandIndexDetailVC: UIViewController, ChartViewDelegate {
     // Chart
     @IBOutlet var lineChartView: LineChartView!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         fillDetail()
     }
-
+    
     func fillDetail() {
-        if let detail = ImkbHisseIndexList.shared.selectedStockandIndex {
+        if let detail = SoapImkbStockIndexList.shared.selected {
+            self.getGraphic(detail.Symbol!)
             baslik.text = detail.Symbol
             Symbol.text = detail.Symbol
             Price.text = String(detail.Price!)
@@ -46,7 +46,12 @@ class StockandIndexDetailVC: UIViewController, ChartViewDelegate {
             DayLowestPrice.text = String(detail.DayLowestPrice!)
             Volume.text = String(detail.Volume!)
             Total.text = String(detail.Total!)
-            
+        }
+    }
+    
+    func getGraphic(_ symbol: String) {
+        SoapImkbStockIndexDetail.getList(symbol: symbol, period: .day) { (response) in
+            SoapImkbStockIndexDetail.shared.list = response
             self.fillChart()
         }
     }
@@ -58,9 +63,6 @@ class StockandIndexDetailVC: UIViewController, ChartViewDelegate {
         
         self.setChartData()
     }
-    
-    let dollars = [1,2,3,4,5,6,7]
-    let months = [11,22,33,44,55,66,77]
     
     func setChartData() {
         

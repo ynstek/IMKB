@@ -12,6 +12,9 @@ enum ImkbType {
     case all
     case high
     case low
+    case imkb30
+    case imkb50
+    case imkb100
 }
 
 struct StockandIndexes {

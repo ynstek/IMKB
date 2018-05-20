@@ -15,8 +15,8 @@
 		F207E13920AD9FE800F27C66 /* IMKBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F207E13820AD9FE800F27C66 /* IMKBTests.swift */; };
 		F207E14420AD9FE800F27C66 /* IMKBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F207E14320AD9FE800F27C66 /* IMKBUITests.swift */; };
 		F28F18F720AF674300017229 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F18F620AF674300017229 /* Date.swift */; };
-		F28F18FB20AF67B700017229 /* Encrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F18FA20AF67B700017229 /* Encrypt.swift */; };
-		F28F18FD20AF71B900017229 /* ImkbHisseIndexList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F18FC20AF71B900017229 /* ImkbHisseIndexList.swift */; };
+		F28F18FB20AF67B700017229 /* SoapEncrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F18FA20AF67B700017229 /* SoapEncrypt.swift */; };
+		F28F18FD20AF71B900017229 /* SoapImkbStockIndexList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F18FC20AF71B900017229 /* SoapImkbStockIndexList.swift */; };
 		F28F18FF20AF733900017229 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F18FE20AF733900017229 /* Service.swift */; };
 		F28F190120AF834500017229 /* StockandIndexes.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F190020AF834500017229 /* StockandIndexes.swift */; };
 		F28F190420AF93B800017229 /* AlertFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F190320AF93B800017229 /* AlertFunctions.swift */; };
@@ -29,6 +29,10 @@
 		F28F191420B04C2700017229 /* StockandIndexDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F191320B04C2700017229 /* StockandIndexDetailVC.swift */; };
 		F28F191820B07C1500017229 /* ImkbVolume.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F191720B07C1500017229 /* ImkbVolume.swift */; };
 		F28F191A20B07CBE00017229 /* ForexResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F191920B07CBE00017229 /* ForexResponse.swift */; };
+		F28F191F20B08D9800017229 /* StockandIndexVC+Search.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F191E20B08D9800017229 /* StockandIndexVC+Search.swift */; };
+		F28F192120B180BA00017229 /* SoapImkbStockIndexDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F192020B180BA00017229 /* SoapImkbStockIndexDetail.swift */; };
+		F28F192420B1835A00017229 /* StockandIndexGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F192320B1835A00017229 /* StockandIndexGraphic.swift */; };
+		F28F192620B191FE00017229 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F192520B191FE00017229 /* String.swift */; };
 		F2C087E320ADA5D100681334 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C087E220ADA5D100681334 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -66,8 +70,8 @@
 		F207E14320AD9FE800F27C66 /* IMKBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMKBUITests.swift; sourceTree = "<group>"; };
 		F207E14520AD9FE800F27C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F28F18F620AF674300017229 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
-		F28F18FA20AF67B700017229 /* Encrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Encrypt.swift; sourceTree = "<group>"; };
-		F28F18FC20AF71B900017229 /* ImkbHisseIndexList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImkbHisseIndexList.swift; sourceTree = "<group>"; };
+		F28F18FA20AF67B700017229 /* SoapEncrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoapEncrypt.swift; sourceTree = "<group>"; };
+		F28F18FC20AF71B900017229 /* SoapImkbStockIndexList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoapImkbStockIndexList.swift; sourceTree = "<group>"; };
 		F28F18FE20AF733900017229 /* Service.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Service.swift; sourceTree = "<group>"; };
 		F28F190020AF834500017229 /* StockandIndexes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockandIndexes.swift; sourceTree = "<group>"; };
 		F28F190320AF93B800017229 /* AlertFunctions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertFunctions.swift; sourceTree = "<group>"; };
@@ -80,6 +84,10 @@
 		F28F191320B04C2700017229 /* StockandIndexDetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockandIndexDetailVC.swift; sourceTree = "<group>"; };
 		F28F191720B07C1500017229 /* ImkbVolume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImkbVolume.swift; sourceTree = "<group>"; };
 		F28F191920B07CBE00017229 /* ForexResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForexResponse.swift; sourceTree = "<group>"; };
+		F28F191E20B08D9800017229 /* StockandIndexVC+Search.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StockandIndexVC+Search.swift"; sourceTree = "<group>"; };
+		F28F192020B180BA00017229 /* SoapImkbStockIndexDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoapImkbStockIndexDetail.swift; sourceTree = "<group>"; };
+		F28F192320B1835A00017229 /* StockandIndexGraphic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockandIndexGraphic.swift; sourceTree = "<group>"; };
+		F28F192520B191FE00017229 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
 		F2C087E220ADA5D100681334 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -186,6 +194,7 @@
 			children = (
 				F28F18F620AF674300017229 /* Date.swift */,
 				F28F190720B027B200017229 /* UIViewController.swift */,
+				F28F192520B191FE00017229 /* String.swift */,
 				F28F191120B041C400017229 /* UIColor.swift */,
 			);
 			path = Extension;
@@ -195,8 +204,9 @@
 			isa = PBXGroup;
 			children = (
 				F28F18FE20AF733900017229 /* Service.swift */,
-				F28F18FA20AF67B700017229 /* Encrypt.swift */,
-				F28F18FC20AF71B900017229 /* ImkbHisseIndexList.swift */,
+				F28F18FA20AF67B700017229 /* SoapEncrypt.swift */,
+				F28F18FC20AF71B900017229 /* SoapImkbStockIndexList.swift */,
+				F28F192020B180BA00017229 /* SoapImkbStockIndexDetail.swift */,
 			);
 			path = SoapService;
 			sourceTree = "<group>";
@@ -223,16 +233,26 @@
 			children = (
 				F28F190C20B0314E00017229 /* StockandIndexVC.swift */,
 				F28F190F20B037E400017229 /* StockandIndexVC+TableView.swift */,
+				F28F191E20B08D9800017229 /* StockandIndexVC+Search.swift */,
 			);
 			path = StockandIndexVC;
 			sourceTree = "<group>";
 		};
-		F2C087DF20ADA08900681334 /* Model */ = {
+		F28F192220B1812900017229 /* ForexResponse */ = {
 			isa = PBXGroup;
 			children = (
 				F28F191920B07CBE00017229 /* ForexResponse.swift */,
 				F28F190020AF834500017229 /* StockandIndexes.swift */,
 				F28F191720B07C1500017229 /* ImkbVolume.swift */,
+				F28F192320B1835A00017229 /* StockandIndexGraphic.swift */,
+			);
+			path = ForexResponse;
+			sourceTree = "<group>";
+		};
+		F2C087DF20ADA08900681334 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F28F192220B1812900017229 /* ForexResponse */,
 				F28F18F920AF678800017229 /* SoapService */,
 			);
 			path = Model;
@@ -241,13 +261,13 @@
 		F2C087E020ADA08E00681334 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F2CC77C520AED3AC00E6A01D /* VC */,
+				F2CC77C520AED3AC00E6A01D /* ViewController */,
 				F28F190920B0307900017229 /* Cell */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		F2CC77C520AED3AC00E6A01D /* VC */ = {
+		F2CC77C520AED3AC00E6A01D /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
 				F2C087E220ADA5D100681334 /* HomeVC.swift */,
@@ -255,7 +275,7 @@
 				F28F190E20B037C400017229 /* StockandIndexVC */,
 				F28F191320B04C2700017229 /* StockandIndexDetailVC.swift */,
 			);
-			path = VC;
+			path = ViewController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -440,6 +460,7 @@
 			files = (
 				F28F190420AF93B800017229 /* AlertFunctions.swift in Sources */,
 				F28F191220B041C400017229 /* UIColor.swift in Sources */,
+				F28F192420B1835A00017229 /* StockandIndexGraphic.swift in Sources */,
 				F207E12420AD9FE700F27C66 /* AppDelegate.swift in Sources */,
 				F28F191420B04C2700017229 /* StockandIndexDetailVC.swift in Sources */,
 				F28F190620B01F8000017229 /* IMKBHisseSenetleriEndekslerVC.swift in Sources */,
@@ -449,11 +470,14 @@
 				F28F191020B037E400017229 /* StockandIndexVC+TableView.swift in Sources */,
 				F28F190D20B0314E00017229 /* StockandIndexVC.swift in Sources */,
 				F28F190820B027B200017229 /* UIViewController.swift in Sources */,
-				F28F18FB20AF67B700017229 /* Encrypt.swift in Sources */,
-				F28F18FD20AF71B900017229 /* ImkbHisseIndexList.swift in Sources */,
+				F28F18FB20AF67B700017229 /* SoapEncrypt.swift in Sources */,
+				F28F18FD20AF71B900017229 /* SoapImkbStockIndexList.swift in Sources */,
 				F28F190B20B0312F00017229 /* StockandIndexTVCell.swift in Sources */,
+				F28F192120B180BA00017229 /* SoapImkbStockIndexDetail.swift in Sources */,
 				F28F18F720AF674300017229 /* Date.swift in Sources */,
 				F2C087E320ADA5D100681334 /* HomeVC.swift in Sources */,
+				F28F192620B191FE00017229 /* String.swift in Sources */,
+				F28F191F20B08D9800017229 /* StockandIndexVC+Search.swift in Sources */,
 				F28F18FF20AF733900017229 /* Service.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
