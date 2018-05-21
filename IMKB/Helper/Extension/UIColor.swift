@@ -10,8 +10,6 @@ import Foundation
 import UIKit
 
 extension UIColor {
-    // Hex Color Code
-    // UIColor(hexString: "#")
     convenience init(hexString: String) {
         let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
         var int = UInt32()

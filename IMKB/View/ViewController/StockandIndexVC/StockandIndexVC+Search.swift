@@ -32,10 +32,16 @@ extension StockandIndexVC: UISearchBarDelegate {
             var itemRange: NSRange
             var tmp: NSString
             for item in SoapImkbStockIndexList.shared.list {
-                tmp = item.Symbol! as NSString
+                tmp = item.symbol! as NSString
                 itemRange = tmp.range(of: searchBar.text! , options: NSString.CompareOptions.caseInsensitive)
                 if itemRange.location != NSNotFound {
                     filteredStockandIndexesList.append(item)
+                } else {
+                    tmp = item.name! as NSString
+                    itemRange = tmp.range(of: searchBar.text! , options: NSString.CompareOptions.caseInsensitive)
+                    if itemRange.location != NSNotFound {
+                        filteredStockandIndexesList.append(item)
+                    }
                 }
             }
         }

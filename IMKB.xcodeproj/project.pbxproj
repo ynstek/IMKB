@@ -33,6 +33,7 @@
 		F28F192120B180BA00017229 /* SoapImkbStockIndexDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F192020B180BA00017229 /* SoapImkbStockIndexDetail.swift */; };
 		F28F192420B1835A00017229 /* StockandIndexGraphic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F192320B1835A00017229 /* StockandIndexGraphic.swift */; };
 		F28F192620B191FE00017229 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F192520B191FE00017229 /* String.swift */; };
+		F2985FA920B256F300DE2B27 /* StockandIndexDetailVC+Chart.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2985FA820B256F300DE2B27 /* StockandIndexDetailVC+Chart.swift */; };
 		F2C087E320ADA5D100681334 /* HomeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2C087E220ADA5D100681334 /* HomeVC.swift */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +89,7 @@
 		F28F192020B180BA00017229 /* SoapImkbStockIndexDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoapImkbStockIndexDetail.swift; sourceTree = "<group>"; };
 		F28F192320B1835A00017229 /* StockandIndexGraphic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StockandIndexGraphic.swift; sourceTree = "<group>"; };
 		F28F192520B191FE00017229 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		F2985FA820B256F300DE2B27 /* StockandIndexDetailVC+Chart.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "StockandIndexDetailVC+Chart.swift"; sourceTree = "<group>"; };
 		F2C087E220ADA5D100681334 /* HomeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -249,6 +251,15 @@
 			path = ForexResponse;
 			sourceTree = "<group>";
 		};
+		F2985FAA20B2570100DE2B27 /* StockandIndexDetailVC */ = {
+			isa = PBXGroup;
+			children = (
+				F28F191320B04C2700017229 /* StockandIndexDetailVC.swift */,
+				F2985FA820B256F300DE2B27 /* StockandIndexDetailVC+Chart.swift */,
+			);
+			path = StockandIndexDetailVC;
+			sourceTree = "<group>";
+		};
 		F2C087DF20ADA08900681334 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -273,7 +284,7 @@
 				F2C087E220ADA5D100681334 /* HomeVC.swift */,
 				F28F190520B01F8000017229 /* IMKBHisseSenetleriEndekslerVC.swift */,
 				F28F190E20B037C400017229 /* StockandIndexVC */,
-				F28F191320B04C2700017229 /* StockandIndexDetailVC.swift */,
+				F2985FAA20B2570100DE2B27 /* StockandIndexDetailVC */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -468,6 +479,7 @@
 				F28F190120AF834500017229 /* StockandIndexes.swift in Sources */,
 				F28F191820B07C1500017229 /* ImkbVolume.swift in Sources */,
 				F28F191020B037E400017229 /* StockandIndexVC+TableView.swift in Sources */,
+				F2985FA920B256F300DE2B27 /* StockandIndexDetailVC+Chart.swift in Sources */,
 				F28F190D20B0314E00017229 /* StockandIndexVC.swift in Sources */,
 				F28F190820B027B200017229 /* UIViewController.swift in Sources */,
 				F28F18FB20AF67B700017229 /* SoapEncrypt.swift in Sources */,
@@ -584,7 +596,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -638,7 +650,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_COMPILATION_MODE = wholemodule;

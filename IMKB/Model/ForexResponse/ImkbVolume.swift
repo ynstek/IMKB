@@ -9,8 +9,8 @@
 import Foundation
 
 struct ImkbVolume {
-    var Symbol: String?
-    var Name: String?
-    var Gain: Double?
-    var Fund: Double?
+    var symbol: String?
+    var name: String?
+    var gain: Double?
+    var fund: Double?
 }

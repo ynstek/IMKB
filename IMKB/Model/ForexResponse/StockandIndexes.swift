@@ -18,16 +18,18 @@ enum ImkbType {
 }
 
 struct StockandIndexes {
-    var Symbol: String?
-    var Price: Double?
-    var Difference: Double?
-    var Volume: Double?
-    var Buying: Double?
-    var Selling: Double?
-    var Hour: String? 
+    var symbol: String?
+    var price: Double?
+    var difference: Double?
+    var volume: Double?
+    var buying: Double?
+    var selling: Double?
+    var hour: String? 
     
-    var DayPeakPrice: Double?
-    var DayLowestPrice: Double?
-    var Total: Int?
-    var IsIndex: Bool
+    var dayPeakPrice: Double?
+    var dayLowestPrice: Double?
+    var total: Int?
+    var isIndex: Bool
+    
+    var name: String?
 }

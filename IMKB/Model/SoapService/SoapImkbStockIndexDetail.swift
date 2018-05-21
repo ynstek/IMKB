@@ -42,11 +42,11 @@ class SoapImkbStockIndexDetail: NSObject {
                         var graphicList = [StockandIndexGraphic]()
                         
                         // MARK: StocknIndexesResponseList
-                        let responseList = result["StocknIndexesResponseList"]
+                        let responseList = result["StocknIndexesGraphicInfos"]
                         for element in responseList["StockandIndexGraphic"].all {
                             let response = StockandIndexGraphic(
-                                  price: Double(element["price"].element!.text)
-                                , date: element["date"].element!.text.ToDate()
+                                  price: Double(element["Price"].element!.text)
+                                , date: element["Date"].element!.text.ToDate()
                             )
     
                             graphicList.append(response)
@@ -61,8 +61,7 @@ class SoapImkbStockIndexDetail: NSObject {
                     }
                     
                 } else{
-                    print("error fetching XML")
-                    AlertFunctions.messageType.showOKAlert("ERROR!", bodyMessage: "Error fetching XML")
+                    AlertFunctions.messageType.showOKAlert("HATA!", bodyMessage: "Bir hata oluştu. Lütfen tekrar deneyiniz.")
                 }
             }
         }

@@ -16,18 +16,18 @@ extension StockandIndexVC: UITableViewDataSource {
         
         let data = isFilter ? filteredStockandIndexesList[indexPath.row] : SoapImkbStockIndexList.shared.list[indexPath.row]
         
-        cell.Symbol.text = data.Symbol! + "\n" + String(data.Selling!)
-        cell.Price.text = String(data.Price!) + " TL"
+        cell.Symbol.text = data.symbol! + "\n" + String(data.selling!)
+        cell.Price.text = String(data.price!) + " TL"
         
-        let difference = data.Difference!
+        let difference = data.difference!
         cell.Difference.text = "%" + String(difference)
         cell.DifferenceImage.image = difference > 0 ? UIImage(named: "up") : UIImage(named: "down")
         
-        cell.Volume.text = String(data.Volume!)
-        cell.Buying.text = String(data.Buying!)
-        cell.Selling.text = String(data.Selling!)
+        cell.Volume.text = String(data.volume!)
+        cell.Buying.text = String(data.buying!)
+        cell.Selling.text = String(data.selling!)
         
-        let hour = data.Hour!.dropLast(2)
+        let hour = data.hour!.dropLast(2)
         cell.Hour.text = String(hour.dropLast(2) + ":" + hour.dropFirst(2))
 
         if (indexPath.row % 2 == 0) {

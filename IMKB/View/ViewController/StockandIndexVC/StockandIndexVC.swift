@@ -16,13 +16,14 @@ class StockandIndexVC: UIViewController {
     @IBOutlet var searchBar: UISearchBar!
 
     var imkbType = ImkbType.all
+    
     // Filter
     var isFilter = false
     lazy var filteredStockandIndexesList: [StockandIndexes] = {
         return [StockandIndexes]()
     }()
     
-    lazy var refreshControl:UIRefreshControl = {
+    lazy var refreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(self.refreshControlData), for: .valueChanged)
         return refreshControl
@@ -66,39 +67,42 @@ class StockandIndexVC: UIViewController {
         switch self.imkbType {
         case .low:
             SoapImkbStockIndexList.shared.list = response.stockandIndexes.filter() { r in
-                return (r.Difference! < 0.0)
+                return (r.difference! < 0.0)
             }
         case .high:
             SoapImkbStockIndexList.shared.list = response.stockandIndexes.filter() { r in
-                return (r.Difference! > 0.0)
+                return (r.difference! > 0.0)
             }
         case .imkb30:
             for imkb in response.imkb30 {
-                let stock = response.stockandIndexes.filter() {
+                var stock = response.stockandIndexes.filter() {
                     stock in
-                    return stock.Symbol! == imkb.Symbol!
+                    return stock.symbol! == imkb.symbol!
                 }
                 if stock.count != 0 {
+                    stock[0].name = imkb.name
                     SoapImkbStockIndexList.shared.list.append(stock[0])
                 }
             }
         case .imkb50:
             for imkb in response.imkb50 {
-                let stock = response.stockandIndexes.filter() {
+                var stock = response.stockandIndexes.filter() {
                     stock in
-                    return stock.Symbol! == imkb.Symbol!
+                    return stock.symbol! == imkb.symbol!
                 }
                 if stock.count != 0 {
+                    stock[0].name = imkb.name
                     SoapImkbStockIndexList.shared.list.append(stock[0])
                 }
             }
         case .imkb100:
             for imkb in response.imkb100 {
-                let stock = response.stockandIndexes.filter() {
+                var stock = response.stockandIndexes.filter() {
                     stock in
-                    return stock.Symbol! == imkb.Symbol!
+                    return stock.symbol! == imkb.symbol!
                 }
                 if stock.count != 0 {
+                    stock[0].name = imkb.name
                     SoapImkbStockIndexList.shared.list.append(stock[0])
                 }
             }
@@ -113,6 +117,12 @@ class StockandIndexVC: UIViewController {
             self.baslik.text = "IMKB Düşenler"
         case .high:
             self.baslik.text = "IMKB Yükselenler"
+        case .imkb30:
+            self.baslik.text = "IMKB Hacme Göre 30"
+        case .imkb50:
+            self.baslik.text = "IMKB Hacme Göre 50"
+        case .imkb100:
+            self.baslik.text = "IMKB Hacme Göre 100"
         default:
             self.baslik.text = "Hisse Senetleri ve Endeksler"
         }

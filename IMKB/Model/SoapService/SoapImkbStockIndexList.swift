@@ -47,70 +47,71 @@ class SoapImkbStockIndexList: NSObject {
                         var responseList = result["StocknIndexesResponseList"]
                         for element in responseList["StockandIndex"].all {
                             let response = StockandIndexes(
-                                  Symbol         : element["Symbol"].element!.text
-                                , Price          : Double(element["Price"].element!.text)
-                                , Difference     : Double(element["Difference"].element!.text)
-                                , Volume         : Double(element["Volume"].element!.text)
-                                , Buying         : Double(element["Buying"].element!.text)
-                                , Selling        : Double(element["Selling"].element!.text)
-                                , Hour           : element["Hour"].element!.text
-                                , DayPeakPrice   : Double(element["DayPeakPrice"].element!.text)
-                                , DayLowestPrice : Double(element["DayLowestPrice"].element!.text)
-                                , Total          : Int(element["Total"].element!.text)
-                                , IsIndex        : Bool(element["IsIndex"].element!.text)!
+                                  symbol         : element["Symbol"].element!.text
+                                , price          : Double(element["Price"].element!.text)
+                                , difference     : Double(element["Difference"].element!.text)
+                                , volume         : Double(element["Volume"].element!.text)
+                                , buying         : Double(element["Buying"].element!.text)
+                                , selling        : Double(element["Selling"].element!.text)
+                                , hour           : element["Hour"].element!.text
+                                , dayPeakPrice   : Double(element["DayPeakPrice"].element!.text)
+                                , dayLowestPrice : Double(element["DayLowestPrice"].element!.text)
+                                , total          : Int(element["Total"].element!.text)
+                                , isIndex        : Bool(element["IsIndex"].element!.text)!
+                                , name           : ""
                             )
                             forexResponse.stockandIndexes.append(response)
                         }
                         forexResponse.stockandIndexes.sort { (a, b) -> Bool in
-                            return a.Symbol! < b.Symbol!
+                            return a.symbol! < b.symbol!
                         }
                         
                         // MARK: IMKB100List
                         responseList = result["IMKB100List"]
                         for element in responseList["IMKB100"].all {
                             let response = ImkbVolume(
-                                Symbol: element["Symbol"].element!.text
-                                , Name: element["Name"].element!.text
-                                , Gain: Double(element["Gain"].element!.text)
-                                , Fund: Double(element["Fund"].element!.text)
+                                symbol: element["Symbol"].element!.text
+                                , name: element["Name"].element!.text
+                                , gain: Double(element["Gain"].element!.text)
+                                , fund: Double(element["Fund"].element!.text)
                             )
                             
                             forexResponse.imkb100.append(response)
                         }
                         forexResponse.imkb100.sort { (a, b) -> Bool in
-                            return a.Symbol! < b.Symbol!
+                            return a.symbol! < b.symbol!
                         }
                         
                         // MARK: IMKB50List
                         responseList = result["IMKB50List"]
                         for element in responseList["IMKB50"].all {
                             let response = ImkbVolume(
-                                Symbol: element["Symbol"].element!.text
-                                , Name: element["Name"].element!.text
-                                , Gain: Double(element["Gain"].element!.text)
-                                , Fund: Double(element["Fund"].element!.text)
+                                symbol: element["Symbol"].element!.text
+                                , name: element["Name"].element!.text
+                                , gain: Double(element["Gain"].element!.text)
+                                , fund: Double(element["Fund"].element!.text)
                             )
                             
                             forexResponse.imkb50.append(response)
                         }
                         forexResponse.imkb50.sort { (a, b) -> Bool in
-                            return a.Symbol! < b.Symbol!
+                            return a.symbol! < b.symbol!
                         }
                         
                         // MARK: IMKB30List
                         responseList = result["IMKB30List"]
                         for element in responseList["IMKB30"].all {
                             let response = ImkbVolume(
-                                Symbol: element["Symbol"].element!.text
-                                , Name: element["Name"].element!.text
-                                , Gain: Double(element["Gain"].element!.text)
-                                , Fund: Double(element["Fund"].element!.text)
+                                symbol: element["Symbol"].element!.text
+                                , name: element["Name"].element!.text
+                                , gain: Double(element["Gain"].element!.text)
+                                , fund: Double(element["Fund"].element!.text)
                             )
                             
                             forexResponse.imkb30.append(response)
                         }
                         forexResponse.imkb30.sort { (a, b) -> Bool in
-                            return a.Symbol! < b.Symbol!
+                            return a.symbol! < b.symbol!
                         }
 
                         completion(forexResponse)
@@ -119,8 +120,7 @@ class SoapImkbStockIndexList: NSObject {
                     }
                     
                 } else{
-                    print("error fetching XML")
-                    AlertFunctions.messageType.showOKAlert("ERROR!", bodyMessage: "Error fetching XML")
+                    AlertFunctions.messageType.showOKAlert("HATA!", bodyMessage: "Bir hata oluştu. Lütfen tekrar deneyiniz.")
                 }
             }
         }

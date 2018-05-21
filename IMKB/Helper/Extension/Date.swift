@@ -10,12 +10,21 @@ import Foundation
 
 extension Date {
     func todayDate() -> String {
-        let dateTime = Date()
-        
         let formatter = DateFormatter()
         formatter.timeZone = TimeZone.current
         formatter.dateFormat = "dd:MM:yyyy HH:mm"
-        //        return formatter.date(from: currentDate)! as Date
-        return formatter.string(from: dateTime)
+        return formatter.string(from: self)
+    }
+    
+    func ToMonth() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM"
+        return formatter.string(from: self)
+    }
+    
+    func ToYear() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy"
+        return formatter.string(from: self)
     }
 }

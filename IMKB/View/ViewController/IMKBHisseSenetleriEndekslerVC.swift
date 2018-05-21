@@ -19,7 +19,6 @@ class IMKBHisseSenetleriEndekslerVC: UIViewController {
         super.didReceiveMemoryWarning()
     }
 
-    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let backItem = UIBarButtonItem()
         backItem.title = ""

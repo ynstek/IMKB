@@ -24,7 +24,5 @@ extension UIViewController {
         navigationController?.navigationBar.shadowImage = UIImage()
         navigationController?.setNavigationBarHidden(false, animated:true)
         navigationItem.hidesBackButton = true
-        //                self.edgesForExtendedLayout = UIRectEdge.None // Kenarlar
-        //        navCont.navigationBar.barTintColor = GlobalFunctions.shared.getColor("black")
     }
 }

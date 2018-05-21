@@ -48,8 +48,7 @@ class SoapEncrypt: NSObject {
                         completion(EncryptResultElement.text)
                     }
                 } else{
-                    print("error fetching XML")
-                    AlertFunctions.messageType.showOKAlert("ERROR!", bodyMessage: "Error fetching XML")
+                    AlertFunctions.messageType.showOKAlert("HATA!", bodyMessage: "Bir hata oluştu. Lütfen tekrar deneyiniz.")
                 }
             }
         } else {
