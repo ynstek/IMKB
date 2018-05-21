@@ -746,6 +746,20 @@
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="ltB-Ww-8n6">
+                                                        <rect key="frame" x="20" y="243" width="335" height="29"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="28" id="U7l-cU-CQq"/>
+                                                        </constraints>
+                                                        <segments>
+                                                            <segment title="Günlük"/>
+                                                            <segment title="Haftalık"/>
+                                                            <segment title="Aylık"/>
+                                                        </segments>
+                                                        <connections>
+                                                            <action selector="SgmPeriodChange:" destination="FQw-cV-Lo6" eventType="valueChanged" id="b7O-eJ-L9a"/>
+                                                        </connections>
+                                                    </segmentedControl>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -764,6 +778,7 @@
                                                     <constraint firstItem="GIY-Vp-Li3" firstAttribute="top" secondItem="WsV-MT-549" secondAttribute="bottom" id="Eml-CJ-BsT"/>
                                                     <constraint firstItem="HyP-Vz-d7H" firstAttribute="leading" secondItem="GIY-Vp-Li3" secondAttribute="trailing" id="FU7-IA-k37"/>
                                                     <constraint firstItem="Mz3-8k-n53" firstAttribute="top" secondItem="nX5-jX-dRl" secondAttribute="bottom" id="HL9-h0-7hz"/>
+                                                    <constraint firstItem="ltB-Ww-8n6" firstAttribute="leading" secondItem="RQN-dj-odR" secondAttribute="leading" constant="20" id="ImQ-Yb-LcU"/>
                                                     <constraint firstAttribute="trailing" secondItem="iGL-Vc-0JQ" secondAttribute="trailing" constant="20" id="KSr-EV-5O4"/>
                                                     <constraint firstItem="HyP-Vz-d7H" firstAttribute="leading" secondItem="jSN-ss-tAf" secondAttribute="trailing" id="KSt-93-0Fb"/>
                                                     <constraint firstItem="yc8-5c-2Mq" firstAttribute="leading" secondItem="RQN-dj-odR" secondAttribute="leading" constant="20" id="KTh-Iq-WFI"/>
@@ -795,7 +810,9 @@
                                                     <constraint firstItem="7Mw-xN-qiz" firstAttribute="top" secondItem="1vR-x0-GBJ" secondAttribute="bottom" id="fhe-ut-7l3"/>
                                                     <constraint firstItem="1vR-x0-GBJ" firstAttribute="leading" secondItem="Nn5-mV-g3a" secondAttribute="trailing" id="gDu-P9-gQh"/>
                                                     <constraint firstAttribute="trailing" secondItem="7Dv-HY-GLV" secondAttribute="trailing" constant="20" id="htd-eo-Ifq"/>
+                                                    <constraint firstItem="ltB-Ww-8n6" firstAttribute="top" secondItem="fJ2-qC-QN3" secondAttribute="bottom" constant="3" id="lcT-pp-Gw9"/>
                                                     <constraint firstItem="02G-6I-AcL" firstAttribute="top" secondItem="cwB-rE-L29" secondAttribute="bottom" id="mLy-zz-Cmr"/>
+                                                    <constraint firstAttribute="trailing" secondItem="ltB-Ww-8n6" secondAttribute="trailing" constant="20" id="nKd-R7-Fcp"/>
                                                     <constraint firstItem="7Dv-HY-GLV" firstAttribute="leading" secondItem="RQN-dj-odR" secondAttribute="leading" constant="20" id="nWp-9M-MBH"/>
                                                     <constraint firstItem="fJ2-qC-QN3" firstAttribute="leading" secondItem="RQN-dj-odR" secondAttribute="leading" constant="20" id="pA2-V1-svo"/>
                                                     <constraint firstItem="1vR-x0-GBJ" firstAttribute="top" secondItem="Mz3-8k-n53" secondAttribute="bottom" constant="8" id="q6D-db-2QH"/>
@@ -811,7 +828,7 @@
                                                     <constraint firstItem="HyP-Vz-d7H" firstAttribute="leading" secondItem="fJ2-qC-QN3" secondAttribute="trailing" id="ykZ-Gl-wwI"/>
                                                 </constraints>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsQ-L6-WxU" customClass="BarChartView" customModule="Charts">
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NsQ-L6-WxU" customClass="LineChartView" customModule="Charts">
                                                 <rect key="frame" x="16" y="277" width="343" height="310"/>
                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 <constraints>
@@ -856,12 +873,13 @@
                         <outlet property="DayPeakPrice" destination="u3q-Uf-wB9" id="Hxy-K9-ggP"/>
                         <outlet property="Difference" destination="02G-6I-AcL" id="nUm-vT-kM2"/>
                         <outlet property="DifferenceImage" destination="SRf-Q8-uGr" id="cPx-6p-0Yg"/>
+                        <outlet property="Last" destination="Mz3-8k-n53" id="sGL-b9-enk"/>
                         <outlet property="Price" destination="cwB-rE-L29" id="owg-A4-ycf"/>
                         <outlet property="Symbol" destination="iGL-Vc-0JQ" id="vF7-F3-5MI"/>
                         <outlet property="Total" destination="7Mw-xN-qiz" id="Arn-x0-E9g"/>
                         <outlet property="Volume" destination="1vR-x0-GBJ" id="0wA-Wg-Hrd"/>
-                        <outlet property="barChartView" destination="NsQ-L6-WxU" id="5rG-q7-DDS"/>
                         <outlet property="baslik" destination="7Dv-HY-GLV" id="jsX-ee-RVT"/>
+                        <outlet property="chartView" destination="NsQ-L6-WxU" id="GjA-hX-fP7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F0u-U9-BU4" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -19,8 +19,9 @@ class StockandIndexDetailVC: UIViewController {
     @IBOutlet var DayLowestPrice: UILabel!
     @IBOutlet var Volume: UILabel!
     @IBOutlet var Total: UILabel!
+    @IBOutlet var Last: UILabel!
     
-    @IBOutlet var barChartView: BarChartView!
+    @IBOutlet var chartView: LineChartView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,10 +31,11 @@ class StockandIndexDetailVC: UIViewController {
     
     func fillDetail() {
         if let detail = SoapImkbStockIndexList.shared.selected {
-            self.getGraphic(detail.symbol!)
+            self.getGraphic(detail.symbol!, period: .day)
             baslik.text = !detail.name!.isEmpty ? detail.name! : detail.symbol
             Symbol.text = detail.symbol
             Price.text = String(detail.price!)
+            Last.text = String(detail.price!)
             
             let difference = detail.difference!
             Difference.text = String(difference)
@@ -46,8 +48,28 @@ class StockandIndexDetailVC: UIViewController {
         }
     }
     
-    func getGraphic(_ symbol: String) {
-        SoapImkbStockIndexDetail.getList(symbol: symbol, period: .month) { (response) in
+    @IBAction func SgmPeriodChange(_ sender: UISegmentedControl) {
+        switch sender.selectedSegmentIndex {
+        case 0:
+            if let detail = SoapImkbStockIndexList.shared.selected {
+                self.getGraphic(detail.symbol!, period: .day)
+            }
+        case 1:
+            if let detail = SoapImkbStockIndexList.shared.selected {
+                self.getGraphic(detail.symbol!, period: .week)
+            }
+        case 2:
+            if let detail = SoapImkbStockIndexList.shared.selected {
+                self.getGraphic(detail.symbol!, period: .month)
+            }
+        default: break
+            //
+        }
+    }
+    
+    
+    func getGraphic(_ symbol: String, period: Service.Period) {
+        SoapImkbStockIndexDetail.getList(symbol: symbol, period: period) { (response) in
             SoapImkbStockIndexDetail.shared.list = response
             self.fillChart()
         }
