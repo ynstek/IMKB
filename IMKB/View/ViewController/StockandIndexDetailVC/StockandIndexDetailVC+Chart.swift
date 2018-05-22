@@ -70,40 +70,4 @@ extension StockandIndexDetailVC: ChartViewDelegate {
         chartView.noDataFont = UIFont.boldSystemFont(ofSize: 18)
         chartView.backgroundColor = UIColor.clear
     }
-    
-    
-//    func setChart(dataPoints: [String], values: [Double]) {
-//
-//        var dataEntries: [BarChartDataEntry] = []
-//        var count = 0
-//        for i in dataPoints {
-//            let dateEntry = BarChartDataEntry(x: Double(i)!, y: values[count])
-//            dataEntries.append(dateEntry)
-//            count += 1
-//        }
-//
-//        let xAxis = barChartView.xAxis
-//        xAxis.drawGridLinesEnabled = false
-//        xAxis.labelPosition = .bottom
-//        xAxis.granularity = 1
-//
-//        barChartView.pinchZoomEnabled = true
-//        barChartView.chartDescription?.enabled = false
-//        barChartView.rightAxis.enabled = false
-//        barChartView.leftAxis.drawGridLinesEnabled = false
-//        barChartView.leftAxis.drawLabelsEnabled = true
-//        barChartView.animate(xAxisDuration: 1.0, yAxisDuration: 1.0)
-//
-//        var year = ""
-//        if SoapImkbStockIndexDetail.shared.list.count != 0 {
-//            year = SoapImkbStockIndexDetail.shared.list[0].date!.ToYear() + " yılı"
-//        }
-//        let chartDataSet = BarChartDataSet(values: dataEntries, label: year)
-//        chartDataSet.resetColors()
-//        chartDataSet.drawValuesEnabled = true
-//        chartDataSet.colors = ChartColorTemplates.colorful()
-//        let chartData = BarChartData(dataSet: chartDataSet)
-//
-//        barChartView.data = chartData
-//    }
 }
