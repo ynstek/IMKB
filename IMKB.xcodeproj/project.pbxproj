@@ -12,8 +12,6 @@
 		F207E12920AD9FE700F27C66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F207E12720AD9FE700F27C66 /* Main.storyboard */; };
 		F207E12B20AD9FE800F27C66 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F207E12A20AD9FE800F27C66 /* Assets.xcassets */; };
 		F207E12E20AD9FE800F27C66 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F207E12C20AD9FE800F27C66 /* LaunchScreen.storyboard */; };
-		F207E13920AD9FE800F27C66 /* IMKBTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F207E13820AD9FE800F27C66 /* IMKBTests.swift */; };
-		F207E14420AD9FE800F27C66 /* IMKBUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F207E14320AD9FE800F27C66 /* IMKBUITests.swift */; };
 		F28F18F720AF674300017229 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F18F620AF674300017229 /* Date.swift */; };
 		F28F18FB20AF67B700017229 /* SoapEncrypt.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F18FA20AF67B700017229 /* SoapEncrypt.swift */; };
 		F28F18FD20AF71B900017229 /* SoapImkbStockIndexList.swift in Sources */ = {isa = PBXBuildFile; fileRef = F28F18FC20AF71B900017229 /* SoapImkbStockIndexList.swift */; };
@@ -65,11 +63,7 @@
 		F207E12D20AD9FE800F27C66 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F207E12F20AD9FE800F27C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F207E13420AD9FE800F27C66 /* IMKBTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMKBTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F207E13820AD9FE800F27C66 /* IMKBTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMKBTests.swift; sourceTree = "<group>"; };
-		F207E13A20AD9FE800F27C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F207E13F20AD9FE800F27C66 /* IMKBUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMKBUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F207E14320AD9FE800F27C66 /* IMKBUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMKBUITests.swift; sourceTree = "<group>"; };
-		F207E14520AD9FE800F27C66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		F28F18F620AF674300017229 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		F28F18FA20AF67B700017229 /* SoapEncrypt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoapEncrypt.swift; sourceTree = "<group>"; };
 		F28F18FC20AF71B900017229 /* SoapImkbStockIndexList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoapImkbStockIndexList.swift; sourceTree = "<group>"; };
@@ -140,8 +134,6 @@
 			isa = PBXGroup;
 			children = (
 				F207E12220AD9FE700F27C66 /* IMKB */,
-				F207E13720AD9FE800F27C66 /* IMKBTests */,
-				F207E14220AD9FE800F27C66 /* IMKBUITests */,
 				F207E12120AD9FE700F27C66 /* Products */,
 				27DDC4DE6738E88E27E7C604 /* Pods */,
 				ED155633F0B4713EE22CC24F /* Frameworks */,
@@ -171,24 +163,6 @@
 				F28F190220AF937900017229 /* Helper */,
 			);
 			path = IMKB;
-			sourceTree = "<group>";
-		};
-		F207E13720AD9FE800F27C66 /* IMKBTests */ = {
-			isa = PBXGroup;
-			children = (
-				F207E13820AD9FE800F27C66 /* IMKBTests.swift */,
-				F207E13A20AD9FE800F27C66 /* Info.plist */,
-			);
-			path = IMKBTests;
-			sourceTree = "<group>";
-		};
-		F207E14220AD9FE800F27C66 /* IMKBUITests */ = {
-			isa = PBXGroup;
-			children = (
-				F207E14320AD9FE800F27C66 /* IMKBUITests.swift */,
-				F207E14520AD9FE800F27C66 /* Info.plist */,
-			);
-			path = IMKBUITests;
 			sourceTree = "<group>";
 		};
 		F28F18F820AF674900017229 /* Extension */ = {
@@ -498,7 +472,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F207E13920AD9FE800F27C66 /* IMKBTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -506,7 +479,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F207E14420AD9FE800F27C66 /* IMKBUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
