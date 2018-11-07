@@ -11,7 +11,6 @@ import Foundation
 
 private let _sharedAlertFunctions = AlertFunctions()
 
-
 class AlertFunctions : NSObject {
     
     // MARK: - SHARED INSTANCE
